@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="lv" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaSphere</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="show-login">
+  <canvas class="confetti-canvas" aria-hidden="true"></canvas>
+  <div class="toast-container" role="region" aria-live="polite" aria-atomic="false"></div>
+  <main class="login-panel" id="loginPanel">
+    <h1 data-i18n="loginTitle">NovaSphere portāls</h1>
+    <form id="loginForm">
+      <label>
+        <span data-i18n="username">Lietotājvārds</span>
+        <input id="loginUser" name="username" autocomplete="username" required data-i18n="username" data-i18n-placeholder>
+      </label>
+      <label>
+        <span data-i18n="password">Parole</span>
+        <input id="loginPass" name="password" type="password" autocomplete="current-password" required data-i18n="password" data-i18n-placeholder>
+      </label>
+      <button type="submit" data-i18n="login">Pieteikties</button>
+    </form>
+    <div class="info">
+      <p><strong>pārdevējs</strong> — lietotājvārds: <code>pardavejs</code>, parole: <code>Nova-Admin-123</code></p>
+      <p><strong>pircējs</strong> — lietotājvārds: <code>pircejs</code>, parole: <code>Nova-User-123</code></p>
+    </div>
+    <footer class="sim-note">Šī ir simulācija mācību nolūkiem. Kartes dati netiek sūtīti vai glabāti ārpus šīs ierīces. Nelietot reālus datus.</footer>
+  </main>
+
+  <div class="app-shell hidden" id="appShell" aria-hidden="true">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div>
+          <h2>NovaSphere</h2>
+          <small id="announcementTicker" class="badge">Neona ekonomika plaukst!</small>
+        </div>
+      </div>
+      <div class="wallet-display">
+        <span class="wallet-badge" id="walletBadge" data-i18n="wallet">Maks: 0,00 €</span>
+      </div>
+      <div class="header-actions">
+        <button id="addFundsBtn" data-i18n="addFunds">Pievienot līdzekļus</button>
+        <button id="inventoryShortcut">Inventārs</button>
+        <select id="languageSelect" aria-label="Valoda">
+          <option value="lv">LV</option>
+          <option value="en">EN</option>
+        </select>
+        <div class="avatar-pill">
+          <img id="headerAvatar" src="assets/img/avatar/avatar1.svg" alt="Profils">
+          <div>
+            <div id="headerName">---</div>
+            <span id="headerRole">---</span>
+          </div>
+        </div>
+        <button id="logoutBtn" data-i18n="logout">Izrakstīties</button>
+      </div>
+      <div class="announcement-ticker" id="announcementLine">Sveicināti NovaSphere!</div>
+    </header>
+
+    <nav class="side-nav" aria-label="Galvenā navigācija">
+      <button data-view="kazino" class="active"><span class="icon">🎰</span><span data-i18n="casino">Kazino</span></button>
+      <button data-view="tirgus"><span class="icon">🛒</span><span data-i18n="marketplace">Tirgus</span></button>
+      <button data-view="ads"><span class="icon">📣</span><span data-i18n="myAds">Sludinājumi</span></button>
+      <button data-view="inventory"><span class="icon">🎒</span><span data-i18n="inventory">Inventārs</span></button>
+      <button data-view="chat"><span class="icon">💬</span><span data-i18n="chat">Čats</span></button>
+      <button data-view="admin" id="adminNav" class="hidden"><span class="icon">🛠</span><span data-i18n="admin">Pārdevējs</span></button>
+      <button data-view="settings"><span class="icon">⚙️</span><span data-i18n="settings">Iestatījumi</span></button>
+    </nav>
+
+    <main class="app-main" id="mainContent" tabindex="-1">
+      <section class="view active" id="view-kazino"></section>
+      <section class="view" id="view-tirgus"></section>
+      <section class="view" id="view-ads"></section>
+      <section class="view" id="view-inventory"></section>
+      <section class="view" id="view-chat"></section>
+      <section class="view" id="view-admin"></section>
+      <section class="view" id="view-settings"></section>
+    </main>
+
+    <aside class="sidebar open" id="sidebar">
+      <div class="sidebar-toggle">
+        <strong>Čats &amp; NovaBot</strong>
+        <button id="sidebarCollapse" aria-expanded="true">➖</button>
+      </div>
+      <div class="sidebar-content">
+        <div class="chat-panel">
+          <h3>City Čats</h3>
+          <div class="chat-log" id="sidebarChatLog"></div>
+          <div class="chat-input">
+            <input type="text" id="sidebarChatInput" placeholder="Sūti ziņu...">
+            <button id="sidebarChatSend">▶</button>
+          </div>
+        </div>
+        <div class="bot-feed">
+          <h3>NovaBot</h3>
+          <div class="chat-log" id="botFeed"></div>
+          <label><input type="checkbox" id="muteBot"> Mute NovaBot</label>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="assets/js/seed.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/wallet.js"></script>
+  <script src="assets/js/chat.js"></script>
+  <script src="assets/js/casino.js"></script>
+  <script src="assets/js/market.js"></script>
+  <script src="assets/js/ads.js"></script>
+  <script src="assets/js/inventory.js"></script>
+  <script src="assets/js/settings.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
