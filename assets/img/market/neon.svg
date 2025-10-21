@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" rx="24" fill="#0f1122"/>
+  <rect x="50" y="40" width="140" height="80" rx="20" fill="none" stroke="#64d9ff" stroke-width="6"/>
+  <text x="120" y="96" font-size="34" text-anchor="middle" fill="#8f6dff" font-family="system-ui">NEON</text>
+</svg>

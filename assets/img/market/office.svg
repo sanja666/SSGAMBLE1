@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" rx="24" fill="#1e1a36"/>
+  <rect x="40" y="40" width="60" height="80" rx="8" fill="#2f7bff"/>
+  <rect x="140" y="30" width="60" height="100" rx="12" fill="#8f6dff"/>
+  <rect x="60" y="120" width="120" height="12" rx="6" fill="#64d9ff" opacity="0.7"/>
+  <text x="120" y="150" text-anchor="middle" font-size="16" fill="#fff" font-family="system-ui">Office</text>
+</svg>
