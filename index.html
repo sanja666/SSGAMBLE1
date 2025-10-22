@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latvijas Valsts Pakalpojumi</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__meta">
+            <div class="container header__meta-container">
+                <span class="portal-mark" data-i18n="portalMark">Latvijas valsts portāls</span>
+                <nav class="meta-nav" aria-label="Papildu navigācija">
+                    <a href="#services" data-i18n="metaResidents">Iedzīvotājiem</a>
+                    <a href="#services" data-i18n="metaBusiness">Uzņēmējiem</a>
+                    <a href="#support" data-i18n="metaAuthorities">Iestādēm</a>
+                </nav>
+            </div>
+        </div>
+        <div class="container header__main">
+            <a class="brand" href="#hero">
+                <img src="assets/img/latvia-logo.svg" alt="Latvijas ģerbonis" class="brand__icon">
+                <span class="brand__text">
+                    <span class="brand__title" data-i18n="brandTitle">Latvijas Valsts Pakalpojumi</span>
+                    <span class="brand__subtitle" data-i18n="brandSubtitle">Vienotais e-pakalpojumu portāls</span>
+                </span>
+            </a>
+            <nav class="main-nav" aria-label="Galvenā navigācija">
+                <a href="#services" data-i18n="navServices">Pakalpojumi</a>
+                <a href="#situations" data-i18n="navSituations">Dzīves situācijas</a>
+                <a href="#how-it-works" data-i18n="navHow">Kā sākt</a>
+                <a href="#news" data-i18n="navNews">Jaunumi</a>
+                <a href="#support" data-i18n="navSupport">Atbalsts</a>
+            </nav>
+            <div class="header__actions">
+                <label class="language" for="language-select">
+                    <span class="sr-only" data-i18n="languageLabel">Valoda</span>
+                    <select id="language-select" data-i18n-aria-label="languageSelectLabel" aria-label="Valodas izvēle">
+                        <option value="lv" selected data-i18n="languageLv">Latviešu</option>
+                        <option value="en" data-i18n="languageEn">English</option>
+                    </select>
+                </label>
+                <button class="btn btn--outline" data-modal="login" data-i18n="login">Pierakstīties</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="container hero__layout">
+                <div class="hero__content">
+                    <p class="hero__eyebrow" data-i18n="heroEyebrow">Vienuviet visiem dzīves gadījumiem</p>
+                    <h1 data-i18n="heroTitle">Vienkārša piekļuve valsts pakalpojumiem</h1>
+                    <p class="hero__lead" data-i18n="heroSubtitle">Pārvaldiet dokumentus, deklarācijas un pieteikumus vienuviet – droši un ērtā laikā.</p>
+                    <form class="hero__search" id="service-search" role="search">
+                        <label for="search-input" class="sr-only" data-i18n="searchLabel">Meklēt pakalpojumu</label>
+                        <input type="search" id="search-input" name="search" data-i18n-placeholder="searchPlaceholder" placeholder="Meklēt pakalpojumu vai tēmu">
+                        <button type="submit" class="btn btn--primary" data-i18n="searchButton">Meklēt</button>
+                    </form>
+                    <div class="hero__tags" aria-label="Ieteiktās tēmas">
+                        <button type="button" class="tag" data-quick="tax" data-i18n="tagTax">Gada deklarācija</button>
+                        <button type="button" class="tag" data-quick="benefit" data-i18n="tagBenefit">Ģimenes pabalsti</button>
+                        <button type="button" class="tag" data-quick="residence" data-i18n="tagResidence">Dzīvesvietas deklarācija</button>
+                        <button type="button" class="tag" data-quick="vehicle" data-i18n="tagVehicle">Transportlīdzekļi</button>
+                    </div>
+                    <div class="hero__actions" role="list">
+                        <a class="quick-link" href="#services" role="listitem">
+                            <span class="quick-link__icon" aria-hidden="true">💼</span>
+                            <span>
+                                <strong data-i18n="quickLinkBusiness">Uzņēmējdarbības pakalpojumi</strong>
+                                <span data-i18n="quickLinkBusinessHint">Reģistrācija, licences un iesniegumi</span>
+                            </span>
+                        </a>
+                        <a class="quick-link" href="#situations" role="listitem">
+                            <span class="quick-link__icon" aria-hidden="true">👪</span>
+                            <span>
+                                <strong data-i18n="quickLinkFamily">Ģimenes atbalsts</strong>
+                                <span data-i18n="quickLinkFamilyHint">Pabalsti, bērnudārzi, veselība</span>
+                            </span>
+                        </a>
+                        <a class="quick-link" href="#support" role="listitem">
+                            <span class="quick-link__icon" aria-hidden="true">🛟</span>
+                            <span>
+                                <strong data-i18n="quickLinkSupport">Nepieciešama palīdzība?</strong>
+                                <span data-i18n="quickLinkSupportHint">Tiešraides čats un tālrunis</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <aside class="hero__panel">
+                    <h2 data-i18n="heroPanelTitle">Sākt darbu uzreiz</h2>
+                    <ul class="panel-list">
+                        <li data-i18n="panelItemOne">Pārbaudiet savu pieteikumu statusu reāllaikā</li>
+                        <li data-i18n="panelItemTwo">Saņemiet paziņojumus par termiņiem un izmaiņām</li>
+                        <li data-i18n="panelItemThree">Droši maksājiet nodokļus un nodevas tiešsaistē</li>
+                    </ul>
+                    <form class="quick-login">
+                        <label for="personal-code" data-i18n="personalCodeLabel">Personas kods</label>
+                        <input type="text" id="personal-code" name="personal-code" inputmode="numeric" data-i18n-placeholder="quickLoginPlaceholder" placeholder="010101-12345" autocomplete="username">
+                        <label for="auth-method" data-i18n="authMethodLabel">Autentifikācijas veids</label>
+                        <select id="auth-method" name="auth-method">
+                            <option value="bank" data-i18n="authBank">Internetbanka</option>
+                            <option value="id-card" data-i18n="authIdCard">eID karte</option>
+                            <option value="mobile" data-i18n="authSmartId">Smart-ID</option>
+                        </select>
+                        <button type="submit" class="btn btn--primary" data-i18n="continueButton">Turpināt</button>
+                    </form>
+                    <p class="hero__notice" data-i18n="securityNote">Drošam pieslēgumam izmantojiet tikai oficiālās autentifikācijas iespējas.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 data-i18n="popularServicesTitle">Populārākie pakalpojumi</h2>
+                        <p data-i18n="popularServicesIntro">Atlasīti biežāk lietotie pakalpojumi ar ātru piekļuvi dokumentiem un iesniegumiem.</p>
+                    </div>
+                    <a class="section-link" href="#" data-i18n="viewAllServices">Skatīt visus</a>
+                </div>
+                <div class="card-grid">
+                    <article class="service-card">
+                        <span class="service-card__icon" aria-hidden="true">🧾</span>
+                        <h3 data-i18n="serviceTaxTitle">Nodokļu deklarācijas</h3>
+                        <p data-i18n="serviceTaxDescription">Iesniedziet gada ienākumu deklarāciju un sekojiet atmaksu statusam.</p>
+                        <a href="#" class="service-card__link" data-i18n="serviceTaxAction">Aizpildīt deklarāciju</a>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-card__icon" aria-hidden="true">🏥</span>
+                        <h3 data-i18n="serviceHealthTitle">E-veselības dati</h3>
+                        <p data-i18n="serviceHealthDescription">Apskatiet receptes, nosūtījumus un pārvaldiet ārstu vizītes.</p>
+                        <a href="#" class="service-card__link" data-i18n="serviceHealthAction">Atvērt e-veselību</a>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-card__icon" aria-hidden="true">🏢</span>
+                        <h3 data-i18n="serviceBusinessTitle">Uzņēmumu reģistrācija</h3>
+                        <p data-i18n="serviceBusinessDescription">Reģistrējiet uzņēmumu tiešsaistē un atjaunojiet datus.</p>
+                        <a href="#" class="service-card__link" data-i18n="serviceBusinessAction">Reģistrēt uzņēmumu</a>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-card__icon" aria-hidden="true">👪</span>
+                        <h3 data-i18n="serviceFamilyTitle">Ģimenes pabalsti</h3>
+                        <p data-i18n="serviceFamilyDescription">Piesakieties bērna piedzimšanas un citiem ģimenes pabalstiem.</p>
+                        <a href="#" class="service-card__link" data-i18n="serviceFamilyAction">Pieteikties pabalstam</a>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-card__icon" aria-hidden="true">📍</span>
+                        <h3 data-i18n="serviceResidenceTitle">Deklarēšanās</h3>
+                        <p data-i18n="serviceResidenceDescription">Deklarējiet dzīvesvietu un pārbaudiet deklarācijas vēsturi.</p>
+                        <a href="#" class="service-card__link" data-i18n="serviceResidenceAction">Deklarēt adresi</a>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-card__icon" aria-hidden="true">🚗</span>
+                        <h3 data-i18n="serviceTransportTitle">Transportlīdzekļu pakalpojumi</h3>
+                        <p data-i18n="serviceTransportDescription">Apmaksājiet ceļa nodokli un rezervējiet tehnisko apskati.</p>
+                        <a href="#" class="service-card__link" data-i18n="serviceTransportAction">Pārvaldīt transportu</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="situations" id="situations">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 data-i18n="situationsTitle">Dzīves situāciju ceļveži</h2>
+                        <p data-i18n="situationsIntro">Atrast vajadzīgo pakalpojumu palīdz strukturētie ceļveži biežāk sastopamajām situācijām.</p>
+                    </div>
+                </div>
+                <div class="situations-grid">
+                    <article class="situation-card">
+                        <div class="situation-card__badge">1</div>
+                        <h3 data-i18n="situationFamilyTitle">Bērna piedzimšana</h3>
+                        <ul>
+                            <li data-i18n="situationFamilyItem1">Pabalstu un vecāku atvaļinājuma pieteikšana</li>
+                            <li data-i18n="situationFamilyItem2">Pirmā dokumentu un veselības aprūpes noformēšana</li>
+                            <li data-i18n="situationFamilyItem3">Bērnudārzu un skolu rindas</li>
+                        </ul>
+                        <a href="#" class="situation-card__cta" data-i18n="situationExplore">Apskatīt soļus</a>
+                    </article>
+                    <article class="situation-card">
+                        <div class="situation-card__badge">2</div>
+                        <h3 data-i18n="situationResidenceTitle">Pārcelšanās Latvijā</h3>
+                        <ul>
+                            <li data-i18n="situationResidenceItem1">Deklarācijas un komunālo pakalpojumu pieteikšana</li>
+                            <li data-i18n="situationResidenceItem2">Transportlīdzekļu un vadītāja apliecības jautājumi</li>
+                            <li data-i18n="situationResidenceItem3">Skolu un veselības aprūpes pārreģistrēšana</li>
+                        </ul>
+                        <a href="#" class="situation-card__cta" data-i18n="situationExplore">Apskatīt soļus</a>
+                    </article>
+                    <article class="situation-card">
+                        <div class="situation-card__badge">3</div>
+                        <h3 data-i18n="situationBusinessTitle">Uzņēmuma uzsākšana</h3>
+                        <ul>
+                            <li data-i18n="situationBusinessItem1">Reģistrācijas un licencēšanas prasības</li>
+                            <li data-i18n="situationBusinessItem2">Nodokļu un algu aprēķinu rīki</li>
+                            <li data-i18n="situationBusinessItem3">Valsts atbalsta programmas</li>
+                        </ul>
+                        <a href="#" class="situation-card__cta" data-i18n="situationExplore">Apskatīt soļus</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="news" id="news">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 data-i18n="newsTitle">Jaunumi portālā</h2>
+                        <p data-i18n="newsIntro">Sekojiet līdzi svarīgiem paziņojumiem, uzlabojumiem un termiņiem.</p>
+                    </div>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <h3 data-i18n="newsItem1Title">Jauna eID aktivizācija tiešsaistē</h3>
+                        <p data-i18n="newsItem1Text">No 2024. gada eID karti iespējams aktivizēt mājās, izmantojot drošu lietotni.</p>
+                        <a href="#" data-i18n="newsItem1Link">Lasīt vairāk</a>
+                    </article>
+                    <article class="news-card">
+                        <h3 data-i18n="newsItem2Title">Atbalsts ģimenēm pieaug</h3>
+                        <p data-i18n="newsItem2Text">Ieviesti vienkāršāki pieteikšanās soļi bērna kopšanas pabalstiem.</p>
+                        <a href="#" data-i18n="newsItem2Link">Lasīt vairāk</a>
+                    </article>
+                    <article class="news-card">
+                        <h3 data-i18n="newsItem3Title">Uzņēmumu portāla uzlabojumi</h3>
+                        <p data-i18n="newsItem3Text">Jauns pārskatu panelis ļauj sekot licenču un atļauju derīgumam.</p>
+                        <a href="#" data-i18n="newsItem3Link">Lasīt vairāk</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-to" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 data-i18n="howToTitle">Kā sākt darbu ar portālu</h2>
+                        <p data-i18n="howToIntro">Četri vienkārši soļi no pieslēgšanās līdz rezultātam.</p>
+                    </div>
+                </div>
+                <div class="steps-grid">
+                    <article class="step">
+                        <span class="step__number">1</span>
+                        <h3 data-i18n="howStep1Title">Izveidojiet drošu pieslēgumu</h3>
+                        <p data-i18n="howStep1Text">Izmantojiet eID karti, Smart-ID vai savu internetbanku, lai apstiprinātu identitāti.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__number">2</span>
+                        <h3 data-i18n="howStep2Title">Izvēlieties pakalpojumu</h3>
+                        <p data-i18n="howStep2Text">Atlasiet nepieciešamo pakalpojumu un pārliecinieties par nepieciešamajiem dokumentiem.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__number">3</span>
+                        <h3 data-i18n="howStep3Title">Aizpildiet iesniegumu</h3>
+                        <p data-i18n="howStep3Text">Seko norādēm soli pa solim un pievieno pieprasītos dokumentus.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__number">4</span>
+                        <h3 data-i18n="howStep4Title">Saņemiet rezultātu</h3>
+                        <p data-i18n="howStep4Text">Sekojiet līdzi statusam un saņemiet paziņojumus portālā un e-pastā.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="support" id="support">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 data-i18n="supportTitle">Palīdzība un atbalsts</h2>
+                        <p data-i18n="supportIntro">Izvēlieties ērtāko veidu, kā sazināties ar speciālistiem.</p>
+                    </div>
+                    <a class="section-link" href="#" data-i18n="supportEmail">Rakstīt e-pastu</a>
+                </div>
+                <div class="support-grid">
+                    <article class="support-card">
+                        <span class="support-card__icon" aria-hidden="true">📚</span>
+                        <h3 data-i18n="supportSelfServiceTitle">Pašapkalpošanās centrs</h3>
+                        <p data-i18n="supportSelfServiceText">Ceļveži, bieži uzdotie jautājumi un video instrukcijas par pakalpojumiem.</p>
+                        <a href="#" data-i18n="supportSelfServiceLink">Apmeklēt centru</a>
+                    </article>
+                    <article class="support-card">
+                        <span class="support-card__icon" aria-hidden="true">📞</span>
+                        <h3 data-i18n="supportContactTitle">Zvanu centrs</h3>
+                        <p data-i18n="supportContactText">Darba dienās 8.00–18.00 pa tālruni +371 6601 2345.</p>
+                        <a href="tel:+37166012345" data-i18n="supportContactLink">Zvanīt</a>
+                    </article>
+                    <article class="support-card">
+                        <span class="support-card__icon" aria-hidden="true">💬</span>
+                        <h3 data-i18n="supportChatTitle">Tiešsaistes čats</h3>
+                        <p data-i18n="supportChatText">Saņemiet ātru palīdzību no konsultanta, izmantojot drošu čatu.</p>
+                        <a href="#" data-i18n="supportChatLink">Sākt čatu</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="contacts">
+            <div class="container cta__layout">
+                <div>
+                    <h2 data-i18n="ctaTitle">Nepieciešama palīdzība ar iesniegumiem?</h2>
+                    <p data-i18n="ctaText">Mūsu speciālisti palīdzēs sagatavot dokumentus un atbildēs uz jautājumiem.</p>
+                </div>
+                <button class="btn btn--light" data-modal="login" data-i18n="ctaButton">Pieteikt konsultāciju</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__layout">
+            <div>
+                <h3 data-i18n="footerAboutTitle">Par portālu</h3>
+                <p data-i18n="footerAboutText">Valsts vienotais e-pakalpojumu portāls iedzīvotājiem, uzņēmējiem un iestādēm.</p>
+            </div>
+            <div>
+                <h3 data-i18n="footerLinksTitle">Ātrās saites</h3>
+                <ul>
+                    <li><a href="#services" data-i18n="footerLinkServices">Pakalpojumu katalogs</a></li>
+                    <li><a href="#situations" data-i18n="footerLinkSituations">Dzīves situācijas</a></li>
+                    <li><a href="#news" data-i18n="footerLinkNews">Jaunumi un paziņojumi</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 data-i18n="footerSupportTitle">Atbalsts</h3>
+                <ul>
+                    <li><a href="#support" data-i18n="footerLinkSupport">Palīdzības centrs</a></li>
+                    <li><a href="#" data-i18n="footerLinkAccessibility">Pieejamības paziņojums</a></li>
+                    <li><a href="#" data-i18n="footerLinkPrivacy">Privātuma politika</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__legal">
+            <div class="container">
+                <p data-i18n="footerLegal">© 2024 Latvijas Valsts Pakalpojumi. Visas tiesības aizsargātas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="login-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="login-title">
+        <div class="modal__dialog">
+            <button class="modal__close" type="button" aria-label="Aizvērt">×</button>
+            <div class="modal__header">
+                <h2 id="login-title" data-i18n="modalTitle">Pierakstīšanās</h2>
+                <p data-i18n="modalIntro">Izvēlieties autentifikācijas veidu un ievadiet personas kodu.</p>
+            </div>
+            <form class="modal-form">
+                <label for="modal-personal-code" data-i18n="personalCodeLabel">Personas kods</label>
+                <input type="text" id="modal-personal-code" name="modal-personal-code" inputmode="numeric" data-i18n-placeholder="quickLoginPlaceholder" placeholder="010101-12345" autocomplete="username">
+                <label for="modal-auth-method" data-i18n="authMethodLabel">Autentifikācijas veids</label>
+                <select id="modal-auth-method" name="modal-auth-method">
+                    <option value="bank" data-i18n="authBank">Internetbanka</option>
+                    <option value="id-card" data-i18n="authIdCard">eID karte</option>
+                    <option value="mobile" data-i18n="authSmartId">Smart-ID</option>
+                </select>
+                <button type="submit" class="btn btn--primary" data-i18n="modalSubmit">Pierakstīties</button>
+            </form>
+            <p class="modal__notice" data-i18n="loginNotice">Demonstrācijas versija — autentifikācija nav pieejama.</p>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
