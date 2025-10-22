@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Latvijas ģerboņa stilizācija</title>
+  <circle cx="32" cy="32" r="30" fill="#274c77"/>
+  <path d="M16 28h32v8H16z" fill="#fff"/>
+  <path d="M22 18l10-6 10 6v8H22z" fill="#ffd166"/>
+  <path d="M22 46l10 6 10-6v-8H22z" fill="#ffd166"/>
+</svg>
