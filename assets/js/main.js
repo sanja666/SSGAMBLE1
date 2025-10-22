@@ -355,34 +355,50 @@ function t(key) {
 }
 
 function openModal() {
-    if (!modal) return;
+    if (!modal) {
+        return;
+    }
+
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
-    modal.querySelector('input')?.focus();
+
+    const firstInput = modal.querySelector('input');
+    if (firstInput) {
+        firstInput.focus();
+    }
 }
 
 function closeModal() {
-    if (!modal) return;
+    if (!modal) {
+        return;
+    }
+
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
 }
 
-modalTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', (event) => {
-        event.preventDefault();
-        openModal();
+if (modalTriggers.length > 0) {
+    modalTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            openModal();
+        });
     });
-});
+}
 
-modalClose?.addEventListener('click', () => {
-    closeModal();
-});
-
-modal?.addEventListener('click', (event) => {
-    if (event.target === modal) {
+if (modalClose) {
+    modalClose.addEventListener('click', () => {
         closeModal();
-    }
-});
+    });
+}
+
+if (modal) {
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+}
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
@@ -390,37 +406,47 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-serviceSearch?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert(t('searchDemo'));
-});
-
-quickLogin?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert(t('loginNotice'));
-});
-
-modalForm?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    closeModal();
-    alert(t('loginNotice'));
-});
-
-languageSelect?.addEventListener('change', (event) => {
-    const selected = event.target.value;
-    applyTranslations(selected);
-    persistLanguage(selected);
-});
-
-tagButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        if (searchInput) {
-            searchInput.value = button.textContent.trim();
-            searchInput.focus();
-        }
+if (serviceSearch) {
+    serviceSearch.addEventListener('submit', (event) => {
+        event.preventDefault();
         alert(t('searchDemo'));
     });
-});
+}
+
+if (quickLogin) {
+    quickLogin.addEventListener('submit', (event) => {
+        event.preventDefault();
+        alert(t('loginNotice'));
+    });
+}
+
+if (modalForm) {
+    modalForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        closeModal();
+        alert(t('loginNotice'));
+    });
+}
+
+if (languageSelect) {
+    languageSelect.addEventListener('change', (event) => {
+        const selected = event.target.value;
+        applyTranslations(selected);
+        persistLanguage(selected);
+    });
+}
+
+if (tagButtons.length > 0) {
+    tagButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (searchInput) {
+                searchInput.value = button.textContent.trim();
+                searchInput.focus();
+            }
+            alert(t('searchDemo'));
+        });
+    });
+}
 
 const initialLanguage = readStoredLanguage() || fallbackLanguage;
 applyTranslations(initialLanguage);
