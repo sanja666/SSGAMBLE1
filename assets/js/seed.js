@@ -76,6 +76,7 @@ const DemoSeed = (() => {
         offers,
         adsMine,
         gameHistory,
+        chatLog,
         settings,
         achievements,
         promoCodes: [

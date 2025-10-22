@@ -60,10 +60,10 @@ const Settings = (() => {
   }
 
   function confirmReset() {
+    if (!nova) return;
     if (confirm('Vai tiešām vēlies atiestatīt datus?') && confirm('Pēdējā iespēja!')) {
-      localStorage.clear();
-      Store.seedIfEmpty();
-      location.reload();
+      nova.resetDemo();
+      nova.renderAll();
     }
   }
 

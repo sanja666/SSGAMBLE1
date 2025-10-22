@@ -7,6 +7,7 @@ const Wallet = (() => {
     refreshTransactions();
     nova.bus.on('txn:new', () => refreshTransactions());
     nova.bus.on('settings:ready', () => renderTransactions());
+    nova.bus.on('app:reset', () => refreshTransactions());
   }
 
   async function refreshTransactions() {

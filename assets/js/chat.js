@@ -35,6 +35,10 @@ const Chat = (() => {
         sendBot(`Bilance sasniedza ${nova.formatCurrency(payload.balance)}. Lieliski!`);
       }
     });
+    nova.bus.on('app:reset', () => {
+      hydrateChat();
+      renderLogs();
+    });
   }
 
   function buildChatView() {

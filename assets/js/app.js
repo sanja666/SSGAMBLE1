@@ -333,13 +333,23 @@ const Nova = (() => {
   }
 
   function resetDemo() {
-    localStorage.removeItem('novasphere-seeded');
+    const preserved = new Set(['novasphere-lang']);
     Object.keys(localStorage).forEach((key) => {
-      if (key.startsWith('novasphere')) return;
+      if (!preserved.has(key)) {
+        localStorage.removeItem(key);
+      }
     });
+    Store.resetStores();
+    localStorage.removeItem('novasphere-seeded');
     Store.seedIfEmpty();
     loadState();
+    updateWalletBadge();
+    updateHeaderProfile();
+    updateAdminVisibility();
     renderAll();
+    bus.emit('wallet:update', { balance: state.walletBalance });
+    bus.emit('app:reset');
+    UI.showToast('Demo dati atiestatīti', 'info');
   }
 
   init();
